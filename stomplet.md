@@ -32,6 +32,12 @@ subscription-management, and a simple `onMessage()` for message-sending.
 
     }
 
+# Environment
+
+Stomplets are instantiated by the container in a CDI-based environment.  CDI operations
+occur within the context of container-managed XA transactions, so where possible, systems being
+integrated should use XA-capable adapters.
+
 # Routing
 
 Similar to how Java Servlets are bound to particular contexts within the web-server

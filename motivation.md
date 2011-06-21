@@ -12,9 +12,9 @@ Initial suggestions have been to use some sort of message-broker solution.  Thes
 self-contained client/server pieces with their own pub/sub semantics, or shims atop your
 traditional message-broker, such as HornetQ, exposing them to WebSocket clients.
 
-Self-contained brokers meant specifically for the web tier require bridging into
-back-end systems.  Laying WebSockets directly onto your enterprise broker possibly
-opens up many security issues.
+Self-contained brokers meant specifically for the web tier require additional work to
+perform the actual bridging into back-end systems.  Laying WebSockets directly onto your 
+enterprise broker possibly opens up many security issues.
 
 # Messaging as an API
 

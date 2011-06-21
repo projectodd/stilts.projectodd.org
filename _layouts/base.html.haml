@@ -1,0 +1,18 @@
+%html
+  %head
+    %title
+      #{page.title}
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/grid.css', :media=>'screen, projection' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/stylesheets/text.css', :media=>'screen, print' }
+  %body.ninesixty
+    #container
+      #header_container
+        %a{:href=>'/'}
+          %img{:src=>'/images/logo.png'}
+      #content_container
+        %h1#page-title
+          #{page.title}
+        ~ content
+      #footer_container
+        #footer
+          Copyright 2011 Red Hat, Inc.  

@@ -1,0 +1,8 @@
+profiles:
+  development:
+  production:
+    base_url: http://stilts.projectodd.org/
+    deploy:
+      host: torquebox.org
+      path: /var/www/domains/projectodd.org/stilts/htdocs/ 
+

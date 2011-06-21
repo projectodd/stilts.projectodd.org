@@ -1,0 +1,74 @@
+/* 960 Grid System ~ Core CSS.
+ * Learn more ~ http://960.gs/
+ * *
+ * Licensed under GPL and MIT. */
+
+@import "compass/reset";
+@import "960/grid";
+
+// The following generates the default grids provided by the css version of 960.gs
+.container_12 {
+  @include grid-system(12); }
+
+.container_16 {
+  @include grid-system(16); }
+
+// But most compass users prefer to construct semantic layouts like so (two column layout with header and footer):
+
+$ninesixty-columns: 24;
+
+.two-column {
+  @include grid-container;
+  #header,
+  #footer,
+  #sidebar,
+  #main-content {
+    @include grid-unit-base; }
+  #header, #footer {
+    @include grid-width(24); }
+  #sidebar {
+    @include grid-width(8); }
+  #main-content {
+    @include grid-width(16); } }
+
+body.ninesixty #container {
+  @include grid-container;
+  #header_container {
+    @include grid(24);
+    text-align: center;
+    img.logo {
+      width: 400px;
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+  }
+  #content_container {
+    #navigation-column {
+      @include alpha;
+      @include grid(4);
+    }
+    #content-column {
+      @include grid-prefix(2);
+      @include grid(14);
+      @include omega;
+    }
+  }
+  #footer_container {
+    @include grid(24);
+  }
+}
+
+#overview_container {
+  @include grid-prefix(6);
+  @include grid(12);
+  @include alpha;
+  @include omega;
+  margin-top: 2em;
+  margin-bottom: 4em;
+}
+
+#overview {
+  border-top: 2px solid #777;
+  border-bottom: 2px solid #777;
+  padding: 1em;
+}

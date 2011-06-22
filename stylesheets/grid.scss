@@ -44,7 +44,7 @@ body.ninesixty #container {
   #content_container {
     #navigation-column {
       @include alpha;
-      @include grid(4);
+      @include grid(6);
     }
     #content-column {
       @include grid-prefix(2);

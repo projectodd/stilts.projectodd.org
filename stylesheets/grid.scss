@@ -35,12 +35,11 @@ body.ninesixty #container {
   @include grid-container;
   #header_container {
     @include grid(24);
-    text-align: center;
+    text-align: left;
     img.logo {
-      width: 400px;
-      margin-top: 2em;
-      margin-bottom: 2em;
     }
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1em;
   }
   #content_container {
     #navigation-column {
@@ -54,6 +53,9 @@ body.ninesixty #container {
     }
   }
   #footer_container {
+    margin-top: 2em;
+    border-top: 1px solid #ccc; 
+    padding-top: 1ex;
     @include grid(24);
   }
 }

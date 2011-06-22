@@ -105,7 +105,7 @@ back to the Stomplet's `onUnsubscribe()` method.
 
 ## No acknowledgement
 
-The `Subscriber` parameter passed to `onSubscribe(...) implements a variety of `MessageSink` interfaces to allow
+The `Subscriber` parameter passed to `onSubscribe(...)` implements a variety of `MessageSink` interfaces to allow
 the Stomplet to return messages back to the new subscriber.  The simplest option is:
 
     void send(StompMessage message) throws StompException;

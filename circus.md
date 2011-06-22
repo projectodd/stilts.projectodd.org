@@ -21,6 +21,29 @@ adapter is provided, making it even easier to write message conduits.
 
 # SPI
 
+## MessageConduitFactory
+
+Your implementation of a Circus extension starts with a `MessageConduitFactory`,
+which may be akin in life-cycle to a JMS connection, capable of creating
+`MessageConduit` instances, one per client connection, which would map to
+a JMS `Session`.
+
+    package org.projectodd.stilts.circus;
+
+    import org.projectodd.stilts.stomp.spi.AcknowledgeableMessageSink;
+
+    public interface MessageConduitFactory {
+    
+        MessageConduit createMessageConduit(AcknowledgeableMessageSink messageSink) 
+          throws Exception;
+    
+    }
+
+The `AcknowledgeableMessageSink` interacts with the underlying Stilts connection
+for the client.
+
+## MessageConduit
+
 Implementors should work with this SPI.  The Circus container will instantiate
 (using a `MessageConduitFactory`) a conduit for each client connection, for the
 lifespace of the connection.
@@ -40,3 +63,31 @@ lifespace of the connection.
                                Headers headers) throws Exception;
     }
 
+The `Subscription` is simply a handle for the Circus server to control (cancel)
+the client subscription.
+
+    package org.projectodd.stilts.stomp.spi;
+
+    import org.projectodd.stilts.StompException;
+
+    public interface Subscription {
+    
+        public static enum AckMode {
+            AUTO("auto"),
+            CLIENT("client"),
+            CLIENT_INDIVIDUAL("client-individual"),;
+            
+            private String str;
+    
+            AckMode(String str) {
+                this.str = str;
+            }
+            
+            public String toString() {
+                return this.str;
+            }
+        }
+        
+        String getId();
+        void cancel() throws StompException;
+    }

@@ -13,7 +13,8 @@ to address treating STOMP as primary contract for messaging, and integrating aro
 it, instead of simply applying STOMP shims to existing services.
 
 You can read more about the [motivation behind Stilts](/motivation/). Stilts
-was built as a layered [architecture].
+was built as a layered [architecture].  It encompasses most notably the [**Stomplet API**](/stomplet/)
+and the [**Clown Shoes Stomplet Container**](/clown-shoes/).
 
 # Why should I care?
 

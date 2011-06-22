@@ -16,8 +16,17 @@ layout: base
 
   %ul#links
     %li
+      %a{:href=>'/notes/'}
+        Development Notes
+
+  %ul#links
+    %li
       %a{:href=>'/stomplet/'}
         Stomplet API
+        %ul
+          %li
+            %a{:href=>'/stomplet/core/'}
+              Core Stomplets
     %li
       %a{:href=>'/clown-shoes/'}
         ClownShoes Stomplet Server
@@ -30,10 +39,18 @@ layout: base
 
   %ul#links
     %li
+      %a{:href=>'/client/'}
+        STOMP Client
+
+  %ul#links
+    %li
       %a{:href=>'/source/'}
         Source 
     %li
       %a{:href=>'/javadocs/'}
         JavaDocs 
+    %li
+      %a{:href=>'http://stomp.github.com/stomp-specification-1.1.html'}
+        STOMP 1.1 Specification
 #content-column
   ~ content

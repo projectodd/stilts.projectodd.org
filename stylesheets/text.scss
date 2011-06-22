@@ -49,6 +49,12 @@ h1#page-title {
   font-size: 240%;
 }
 
+ul {
+  ul {
+    margin-bottom: 0;
+  }
+}
+
 h2 {
   font-family: courier, monospace;
   font-size: 140%;

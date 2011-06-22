@@ -28,7 +28,7 @@ getting closer to the end consumer, no longer contained within your firewalls.
 STOMP is an awesome model and wire protocol for passing messages between parties,
 without implying any particular pub/sub model.  Instead of simply exposing your
 existing internal message broker through a transliteration layer to the STOMP 
-wire format, we have an opporunity to treat the STOMP end-point as an explicitly-designed
+wire format, we have an opportunity to treat the STOMP end-point as an explicitly-designed
 API.  
 
 When clients need request/response interaction, they use HTTP, which might ultimately

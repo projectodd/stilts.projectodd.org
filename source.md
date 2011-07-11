@@ -5,7 +5,7 @@ layout: default
 
 # Source code at GitHub
 
-Source for Stilts, Circus and Clown Shoes is all available within the single
+Source for Stilts, the Stomplet Framework and the Message Conduit Framework is all available within the single
 GitHub repo of:
 
 * [http://github.com/projectodd/stilts](http://github.com/projectodd/stilts)

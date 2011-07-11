@@ -8,7 +8,7 @@ title: Overview
 
 # What is Stilts?
 
-Stilts is STOMP-native messaging framework.  It is **not** a message broker.  It aims
+Stilts is a STOMP-native messaging framework.  It is **not** a message broker.  It aims
 to address treating STOMP as primary contract for messaging, and integrating around 
 it, instead of simply applying STOMP shims to existing services.
 

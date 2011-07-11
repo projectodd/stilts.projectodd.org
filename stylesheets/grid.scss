@@ -48,7 +48,7 @@ body.ninesixty #container {
     }
     #content-column {
       @include grid-prefix(2);
-      @include grid(14);
+      @include grid(16);
       @include omega;
     }
   }

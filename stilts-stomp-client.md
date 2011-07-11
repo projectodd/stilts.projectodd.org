@@ -8,10 +8,7 @@ layout: default
 Created for our own testing purposes, the Stilts framework includes a STOMP 1.1
 client.  It **is** strangely named `AbstractStompClient` at the moment.
 
-    InetSocketAddress address = new InetSocketAddress( "localhost", 8675 );
-    client = new AbstractStompClient( address );
-    client.setLoggerManager( SimpleLoggerManager.DEFAULT_INSTANCE );
-
+    StompClient client = new StompClient( "localhost" );
     client.connect();
 
     ClientSubscription subscription1 = 

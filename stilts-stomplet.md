@@ -32,12 +32,6 @@ subscription-management, and a simple `onMessage()` for message-sending.
 
     }
 
-# Environment
-
-Stomplets are instantiated by the container in a CDI-based environment.  CDI operations
-occur within the context of container-managed XA transactions, so where possible, systems being
-integrated should use XA-capable adapters.
-
 # Routing
 
 Similar to how Java Servlets are bound to particular contexts within the web-server
@@ -140,3 +134,15 @@ and `nack()` which the server will call at the appropriate time.  This allows yo
 wrap, for instance, the JMS `Message#acknowledge()` method in an `Acknowledger#ack()`
 method handled directly by the container.
 
+# Server
+
+You can easily stand up a Stomplet server with virtual-hosted Stomplet containers.
+
+    StompletContainer container = new SimpleStompletContainer();
+    Stomplet queueOneStomplet = new MyQueueStomplet();
+    container.addStomplet( "/queues/one", queueOneStomplet );
+
+    server = new StompletServer();
+    server.setTransactionManager( getTransactionManager() );
+    server.setDefaultStompletContainer( container );
+    server.start();

@@ -4,7 +4,7 @@ title: Overview
 ---
 
 [architecture]: /architecture/
-[circus]: /circus/
+[conduit]: /stilts-conduit/
 
 # What is Stilts?
 
@@ -13,14 +13,14 @@ to address treating STOMP as primary contract for messaging, and integrating aro
 it, instead of simply applying STOMP shims to existing services.
 
 You can read more about the [motivation behind Stilts](/motivation/). Stilts
-was built as a layered [architecture].  It encompasses most notably the [**Stomplet API**](/stomplet/)
-and the [**Clown Shoes Stomplet Container**](/clown-shoes/).
+was built as a layered [architecture].  It encompasses most notably the [**Stomplet API**](/stilts-stomplet/)
+and the [**Stilts Stomplet Container**](/stilts-stomplet/).
 
 # Why should I care?
 
 ## Stomplet API
 
-At the top-most level, Stilts introduces the [Stomplet API](/stomplet/) for creating messaging endpoint
+At the top-most level, Stilts introduces the [Stomplet API](/stilts-stomplet/) for creating messaging endpoint
 handlers.  Stomplets build upon the JMS `MessageListener` concept to include handling
 registration of subscribers.
 
@@ -50,7 +50,7 @@ You may or may not involve your enterprise JMS message broker in these interacti
 
 If you'd like to have more control over the interactions between the STOMP protocol and
 your own code, you can drop down a layer, and work with the `MessageConduit` SPI, a part
-of the [Stilts Circus framework][circus].  This allows you to control all subscriptions and message
+of the [Stilts Message Conduit framework][conduit].  This allows you to control all subscriptions and message
 transfer for each client connection at a single point.  The underlying Circus framework handles
 the transactionality of the connections for you.
 
@@ -80,7 +80,7 @@ of support classes directly:
     import org.projectodd.stilts.StompException;
 
     public interface StompProvider {
-        StompConnection createConnection(AcknowledgeableMessageSink messageSink, 
+        StompConnection createConnection(TransactionalAcknowledgeableMessageSink messageSink, 
                                          Headers headers) throws StompException;
     }
 

@@ -1,12 +1,12 @@
 ---
-title: Client
+title: Java STOMP Client
 layout: default
 ---
 
-# STOMP Client
+# Java STOMP Client
 
 Created for our own testing purposes, the Stilts framework includes a STOMP 1.1
-client.  It **is** strangely named `AbstractStompClient` at the moment.
+client.  
 
     StompClient client = new StompClient( "localhost" );
     client.connect();

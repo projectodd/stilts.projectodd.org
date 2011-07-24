@@ -31,4 +31,4 @@ over WebSockets.
 
 We'd like to mutate the Javascript STOMP client to follow an API more akin
 to the Java client, exposing more options through the API, such as message
-acknowledgement-mode, and objectified transations.
+acknowledgement-mode, and objectified transactions.

@@ -1,9 +1,9 @@
 ---
-title: Stilts STOMP Server
+title: Stilts STOMP Framework
 layout: default
 ---
 
-[Message Conduit Server]: /stilts-message-conduit/
+[Message Conduit Framework]: /stilts-conduit/
 [JBoss Netty]: http://www.jboss.org/netty
 
 # Overview
@@ -26,7 +26,7 @@ with a `StompProvider`:
         StompConnection createConnection(TransactionalAcknowledgeableMessageSink messageSink, Headers headers) throws StompException;
     }
 
-The [Message Conduit Server] is a `StompProvider` which adapts the API to a simpler
+The [Message Conduit Framework] is a `StompProvider` which adapts the API to a simpler
 abstraction in which transactions are handled for you. But others, such as native-JMS, 
 could easily be created.
 

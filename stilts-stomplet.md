@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Stomplet API
+title: Stilts Stomplet Framework
 ---
 
 # Foundations

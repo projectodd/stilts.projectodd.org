@@ -8,7 +8,7 @@ layout: default
 Created for our own testing purposes, the Stilts framework includes a STOMP 1.1
 client.  
 
-    StompClient client = new StompClient( "localhost" );
+    StompClient client = new StompClient( "stomp://localhost" );
     client.connect();
 
     ClientSubscription subscription1 = 
